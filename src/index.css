@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./styles/index.css";
+@import "./styles/responsive.css";
 
 html, body, #root { min-height: 100%; }
 .app-loading { display: grid; min-height: 100vh; place-items: center; background: #14251d; color: #f5f7f2; font: 700 14px/1.4 "Noto Sans Sinhala", Inter, "Segoe UI", sans-serif; letter-spacing: .04em; }

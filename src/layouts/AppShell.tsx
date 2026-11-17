@@ -19,6 +19,12 @@ export function AppShell({
   demoMode?: boolean
 }) {
   const [collapsed, setCollapsed] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  useEffect(() => {
+    const close = (event: KeyboardEvent) => { if (event.key === 'Escape') setMobileOpen(false) }
+    window.addEventListener('keydown', close)
+    return () => window.removeEventListener('keydown', close)
+  }, [])
   const [theme, setTheme] = useState<'light' | 'dark'>(() => (localStorage.getItem('teapro-theme') === 'dark' ? 'dark' : 'light'))
   const [language, setLanguage] = useState<'en' | 'si'>(() => (localStorage.getItem('teapro-language') === 'si' ? 'si' : 'en'))
 
@@ -33,8 +39,10 @@ export function AppShell({
   }, [language])
 
   return (
-    <div className={`tp-shell ${collapsed ? 'is-collapsed' : ''}`}>
-      <Sidebar collapsed={collapsed} activeItem={activeItem} onToggle={() => setCollapsed((value) => !value)} onNavigate={onNavigate} />
+    <div className={`tp-shell ${collapsed ? 'is-collapsed' : ''} ${mobileOpen ? 'mobile-open' : ''}`}>
+      <button className="tp-mobile-toggle" aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={mobileOpen} onClick={() => { setCollapsed(false); setMobileOpen(!mobileOpen) }}>{mobileOpen ? '✕' : '☰'}</button>
+      {mobileOpen && <button className="tp-mobile-backdrop" aria-label="Close navigation" onClick={() => setMobileOpen(false)} />}
+      <Sidebar collapsed={collapsed} activeItem={activeItem} onToggle={() => { setCollapsed((value) => !value); setMobileOpen(false) }} onNavigate={(id) => { onNavigate(id); setMobileOpen(false); window.scrollTo(0, 0) }} />
       <div className="tp-shell__body">
         {demoMode && <div className="tp-demo-banner"><strong>Interactive demo</strong><span>Sample data only · Desktop edition uses an encrypted local database</span></div>}
         <Topbar
