@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title">
+  <title id="title">TeaPro ERP splash screen</title>
+  <defs>
+    <radialGradient id="bg" cx="78%" cy="15%" r="95%"><stop stop-color="#296A43"/><stop offset=".55" stop-color="#14251D"/><stop offset="1" stop-color="#0A1410"/></radialGradient>
+    <pattern id="p" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M0 48 48 0M24 48 48 24" stroke="#86BC49" stroke-opacity=".06"/></pattern>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#p)"/>
+  <g transform="translate(490 132)">
+    <rect width="300" height="300" rx="78" fill="#F5F7F2"/>
+    <path d="M53 163C73 87 143 42 247 49c2 100-44 166-129 184-31 6-64-7-74-37-3-11 0-22 9-33Z" fill="#86BC49"/>
+    <path d="M60 224c53-56 100-91 171-140" fill="none" stroke="#14532D" stroke-width="14" stroke-linecap="round"/>
+    <path d="M116 177v-36m40 5v-43m42 9V77" fill="none" stroke="#14532D" stroke-width="11" stroke-linecap="round"/>
+  </g>
+  <text x="640" y="535" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="780">Tea<tspan fill="#86BC49">Pro</tspan> ERP</text>
+  <text x="640" y="592" text-anchor="middle" fill="#DDE8DF" font-family="Inter, Arial, sans-serif" font-size="27" letter-spacing="2">SMART TEA. SMART BUSINESS.</text>
+  <text x="640" y="667" text-anchor="middle" fill="#AFC3B5" font-family="Inter, Arial, sans-serif" font-size="18">Developed by Harsh Apex Digital Solutions</text>
+</svg>

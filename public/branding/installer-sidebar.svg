@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 314" role="img" aria-label="TeaPro ERP installer sidebar">
+  <defs><linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#14532D"/><stop offset="1" stop-color="#14251D"/></linearGradient></defs>
+  <rect width="164" height="314" fill="url(#b)"/>
+  <path d="M32 105c12-42 51-65 107-61 1 54-25 89-71 99-18 4-37-4-43-21-2-7 1-12 7-17Z" fill="#86BC49"/>
+  <path d="M34 130c31-33 59-52 97-79" fill="none" stroke="#F5F7F2" stroke-width="7" stroke-linecap="round"/>
+  <text x="82" y="192" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="27" font-weight="700">TeaPro</text>
+  <text x="82" y="223" text-anchor="middle" fill="#86BC49" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="5">ERP</text>
+  <text x="82" y="286" text-anchor="middle" fill="#DDE8DF" font-family="Arial, sans-serif" font-size="8">HARSH APEX DIGITAL SOLUTIONS</text>
+</svg>

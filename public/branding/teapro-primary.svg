@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">TeaPro ERP primary logo</title>
+  <desc id="desc">Tea leaf technology mark with TeaPro ERP wordmark.</desc>
+  <rect width="720" height="720" rx="72" fill="#F5F7F2"/>
+  <g transform="translate(210 62)">
+    <rect width="300" height="300" rx="78" fill="#14251D"/>
+    <path d="M53 163C73 87 143 42 247 49c2 100-44 166-129 184-31 6-64-7-74-37-3-11 0-22 9-33Z" fill="#86BC49"/>
+    <path d="M60 224c53-56 100-91 171-140" fill="none" stroke="#F5F7F2" stroke-width="14" stroke-linecap="round"/>
+    <path d="M116 177v-36m40 5v-43m42 9V77" fill="none" stroke="#F5F7F2" stroke-width="11" stroke-linecap="round"/>
+    <g fill="#F5F7F2"><circle cx="116" cy="131" r="10"/><circle cx="156" cy="93" r="10"/><circle cx="198" cy="67" r="10"/></g>
+  </g>
+  <text x="360" y="470" text-anchor="middle" fill="#14251D" font-family="Inter, Arial, sans-serif" font-size="108" font-weight="780" letter-spacing="-5">Tea<tspan fill="#14532D">Pro</tspan></text>
+  <rect x="272" y="500" width="176" height="70" rx="18" fill="#86BC49"/>
+  <text x="360" y="549" text-anchor="middle" fill="#14251D" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="9">ERP</text>
+  <text x="360" y="625" text-anchor="middle" fill="#4B5F54" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="540" letter-spacing="1.4">SMART TEA. SMART BUSINESS.</text>
+</svg>
