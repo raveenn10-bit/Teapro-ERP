@@ -8,6 +8,7 @@ export function AppShell({
   role = 'Super Administrator',
   onNavigate = () => undefined,
   onLock = () => undefined,
+  demoMode = false,
 }: {
   children: ReactNode
   activeItem?: string
@@ -15,6 +16,7 @@ export function AppShell({
   role?: string
   onNavigate?: (id: string) => void
   onLock?: () => void
+  demoMode?: boolean
 }) {
   const [collapsed, setCollapsed] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>(() => (localStorage.getItem('teapro-theme') === 'dark' ? 'dark' : 'light'))
@@ -34,6 +36,7 @@ export function AppShell({
     <div className={`tp-shell ${collapsed ? 'is-collapsed' : ''}`}>
       <Sidebar collapsed={collapsed} activeItem={activeItem} onToggle={() => setCollapsed((value) => !value)} onNavigate={onNavigate} />
       <div className="tp-shell__body">
+        {demoMode && <div className="tp-demo-banner"><strong>Interactive demo</strong><span>Sample data only · Desktop edition uses an encrypted local database</span></div>}
         <Topbar
           theme={theme}
           language={language}

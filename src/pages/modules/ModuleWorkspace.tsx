@@ -1,6 +1,8 @@
-import { useDeferredValue, useMemo, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { Download, Filter, Plus, Search, X } from 'lucide-react'
 import { exportCsv } from '../../domain/export'
+import { desktopEntityGateway } from '../../domain/gateway'
+import { demoEntities } from '../../demo/demoData'
 import './modules.css'
 
 export type FieldOption = { label: string; value: string }
@@ -55,6 +57,20 @@ export function ModuleWorkspace({
   const [error, setError] = useState('')
   const deferredQuery = useDeferredValue(query.trim().toLowerCase())
 
+  useEffect(() => {
+    let cancelled = false
+    void desktopEntityGateway.list(entityName).then((saved) => {
+      if (cancelled) return
+      if (saved.length) setRows(saved as ModuleRecord[])
+      else if (!window.teaPro && demoEntities[entityName]) {
+        const seeded = demoEntities[entityName] as ModuleRecord[]
+        localStorage.setItem(`teapro.demo.entities.${entityName}`, JSON.stringify(seeded))
+        setRows(seeded)
+      }
+    }).catch(() => undefined)
+    return () => { cancelled = true }
+  }, [entityName])
+
   const filteredRows = useMemo(() => {
     if (!deferredQuery) return rows
     return rows.filter((row) => Object.values(row).some((value) => String(value).toLowerCase().includes(deferredQuery)))
@@ -75,7 +91,7 @@ export function ModuleWorkspace({
       draft[field.key] = field.type === 'number' ? Number(value) : value
     })
     try {
-      const saved = onCreate ? await onCreate(draft) : draft
+      const saved = onCreate ? await onCreate(draft) : await desktopEntityGateway.create(entityName, draft)
       setRows((current) => [saved, ...current])
       setForm({})
       setFormOpen(false)
